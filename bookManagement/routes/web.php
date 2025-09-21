@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
-Route::get('/home', function(){
-    return 'Welcome to the Page';
-});
+Route::get('/book', [BookController::class, 'index'])->name('books.index');
+
+
+Route::get('/book/{id}', [BookController::class, 'show'])->name('books.show');
