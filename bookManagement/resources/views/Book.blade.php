@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book List</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 70%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 8px 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>Danh sách Sách</title>
 </head>
 <body>
-    <h2 style="text-align: center;">Library - Book List</h2>
-
-    <table>
+    <h1>Danh sách Sách</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Book Name</th>
-                <th>Book Code</th>
-                <th>Author</th>
+                <th>Tên sách</th>
+                <th>Mã sách</th>
+                <th>Tác giả</th>
+                <th>Năm xuất bản</th>
+                <th>ISBN</th>
+                <th>Thể loại</th>
+                <th>Mô tả</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($books as $book)
+            @foreach ($books as $book)
                 <tr>
                     <td>{{ $book->id }}</td>
                     <td>{{ $book->bookName }}</td>
                     <td>{{ $book->bookCode }}</td>
                     <td>{{ $book->bookAuthor }}</td>
+                    <td>{{ $book->publishYear }}</td>
+                    <td>{{ $book->ISBN }}</td>
+                    <td>{{ $book->category }}</td>
+                    <td>{{ $book->description }}</td>
                 </tr>
             @endforeach
         </tbody>
